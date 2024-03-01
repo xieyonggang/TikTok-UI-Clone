@@ -32,6 +32,7 @@ const VideoCard = (props) => {
           setVideoRef(ref);
         }}
         loop
+        muted="true"
         src={url}
       ></video>
       <div className="bottom-controls">
