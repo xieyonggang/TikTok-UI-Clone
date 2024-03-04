@@ -4,13 +4,13 @@ import { faMusic } from '@fortawesome/free-solid-svg-icons';
 import './FooterLeft.css';
 
 export default function FooterLeft(props) {
-  const { username, description, song } = props;
+  const {description, song } = props;
 
   return (
     <div className="footer-container">
       <div className="footer-left">
         <div className="text">
-          <h3>@{username}</h3>
+        
           <p>{description}</p>
           <div className="ticker">
             <FontAwesomeIcon icon={faMusic} style={{ width: '30px' }} />

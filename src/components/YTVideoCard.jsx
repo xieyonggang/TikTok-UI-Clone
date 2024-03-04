@@ -1,40 +1,21 @@
 import React, { useRef, useEffect } from 'react';
 import FooterLeft from './FooterLeft';
 import FooterRight from './FooterRight';
-import './VideoCard.css';
+import './YTVideoCard.css';
 
-const VideoCard = (props) => {
+const YTVideoCard = (props) => {
   const { url, username, description, song, likes, shares, comments, saves, profilePic, setVideoRef, autoplay } = props;
   const videoRef = useRef(null);
 
-  useEffect(() => {
-    if (autoplay) {
-      videoRef.current.play();
-    }
-  }, [autoplay]);
-
-  const onVideoPress = () => {
-    if (videoRef.current.paused) {
-      videoRef.current.play();
-    } else {
-      videoRef.current.pause();
-    }
-  };
 
   return (
     <div className="video">
       {/* The video element */}
-      <video
-        className="player"
-        onClick={onVideoPress}
-        ref={(ref) => {
-          videoRef.current = ref;
-          setVideoRef(ref);
-        }}
-        loop
-        muted="true"
-        src={url}
-      ></video>
+      <iframe width="560" height="315" 
+        src={url} title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen>
+      </iframe>
       
       <div className="bottom-controls">
         <div className="footer-left">
@@ -52,4 +33,4 @@ const VideoCard = (props) => {
   );
 };
 
-export default VideoCard;
+export default YTVideoCard;

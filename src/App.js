@@ -1,10 +1,37 @@
 import React, { useEffect, useState, useRef } from 'react';
 import './App.css';
 import VideoCard from './components/VideoCard';
+import YTVideoCard from './components/YTVideoCard';
 import BottomNavbar from './components/BottomNavbar';
 import TopNavbar from './components/TopNavbar';
 
 // This array holds information about different videos
+
+const YTvideoUrls = [
+  {
+    url: require('https://youtube.com/watch?v=j7P5y0h_edM&amp;controls=0'),
+    profilePic: 'https://p16-sign-useast2a.tiktokcdn.com/tos-useast2a-avt-0068-giso/9d429ac49d6d18de6ebd2a3fb1f39269~c5_100x100.jpeg?x-expires=1688479200&x-signature=pjH5pwSS8Sg1dJqbB1GdCLXH6ew%3D',
+    username: 'digital fluency',
+    description: 'Microsoft OneNote Copilot - just announced 📣 ',
+    song: 'Original sound - Famed Flames',
+    likes: 430,
+    comments: 13,
+    saves: 23,
+    shares: 1,
+  },
+  {
+    url: require('https://www.youtube.com/watch?v=QPOLrbKI5oQ&amp;controls=0'),
+    profilePic: 'https://p16-sign-useast2a.tiktokcdn.com/tos-useast2a-avt-0068-giso/9d429ac49d6d18de6ebd2a3fb1f39269~c5_100x100.jpeg?x-expires=1688479200&x-signature=pjH5pwSS8Sg1dJqbB1GdCLXH6ew%3D',
+    username: 'csjackie',
+    description: 'Lol nvm #compsci #chatgpt #ai #openai #techtok',
+    song: 'Original sound - Famed Flames',
+    likes: 430,
+    comments: 13,
+    saves: 23,
+    shares: 1,
+  }
+]
+
 const videoUrls = [
   {
     url: require('./videos/video1.mp4'),
@@ -103,6 +130,7 @@ function App() {
       <div className="container">
         <TopNavbar className="top-navbar" />
         {/* Here we map over the videos array and create VideoCard components */}
+        
         {videos.map((video, index) => (
           <VideoCard
             key={index}
@@ -119,7 +147,6 @@ function App() {
             autoplay={index === 0}
           />
         ))}
-        <BottomNavbar className="bottom-navbar" />
       </div>
     </div>
   );

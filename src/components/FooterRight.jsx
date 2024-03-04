@@ -41,14 +41,6 @@ function FooterRight({ likes, comments, saves, shares, profilePic }) {
   return (
     <div className="footer-right">
       <div className="sidebar-icon">
-        {profilePic ? (
-          // Displaying the user profile picture
-          <img src={profilePic} className='userprofile' alt='Profile' style={{ width: '45px', height: '45px', color: '#616161' }} />
-        ) : null}
-        {/* The user add icon */}
-        <FontAwesomeIcon icon={userAddIcon} className='useradd' style={{ width: '15px', height: '15px', color: '#FF0000' }} onClick={handleUserAddClick}/>
-      </div>
-      <div className="sidebar-icon">
         {/* The heart icon for liking */}
         <FontAwesomeIcon
           icon={faHeart}
@@ -57,12 +49,6 @@ function FooterRight({ likes, comments, saves, shares, profilePic }) {
         />
         {/* Displaying the formatted likes count */}
         <p>{formatLikesCount(parseLikesCount(likes) + (liked ? 1 : 0))}</p>
-      </div>
-      <div className="sidebar-icon">
-        {/* The comment icon */}
-        <FontAwesomeIcon icon={faCommentDots} style={{ width: '35px', height: '35px', color: 'white' }} />
-        {/* Displaying the number of comments */}
-        <p>{comments}</p>
       </div>
       <div className="sidebar-icon">
         {saved ? (
@@ -88,10 +74,6 @@ function FooterRight({ likes, comments, saves, shares, profilePic }) {
         <FontAwesomeIcon icon={faShare} style={{ width: '35px', height: '35px', color: 'white' }} />
         {/* Displaying the number of shares */}
         <p>{shares}</p>
-      </div>
-      <div className="sidebar-icon record">
-        {/* Displaying the record icon */}
-        <img src="https://static.thenounproject.com/png/934821-200.png" alt='Record Icon' />
       </div>
     </div>
   );
